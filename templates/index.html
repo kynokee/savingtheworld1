@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>savingtheworld1</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Saving the world!</h1>
+    {% if intro %}
+    <p1>{{ intro }}</p1><br>
+    {% endif %}
+    <form method='post'>
+      <label for='name'>Name:</label>
+      <input type='text' name='name' />
+      <input type='submit' value='Submit' />
+    </form>
+    {% if name %}
+    {{ name }}
+    {% endif %}
+
+    {% if nums %}
+      {% for num in nums %}
+      {{ num }}
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>
