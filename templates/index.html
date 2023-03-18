@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>savingtheworld1</title>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
   </head>
+  
   <body>
+    
     <h1>Saving the world!</h1>
     {% if intro %}
-    <p1>{{ intro }}</p1>
+    <h3>{{ intro }}</h3>
     {% endif %}
+    <p1>My name is <b>James</b> and I am from class <b>24/13</b></p1><br>
+    <p1>My H2 subjects are <b>Math, Computing</b> and <b>Physics</b></p1><br>
+    <p1>My H1 subject is <b>Economics</b></p1><br>
+    <p1>What about you?</p1><br><br>
+    
     <form method='post'>
-      <label for='name'>Name:</label><br>
-      <input type='text' name='name' />
-      <input type='submit' value='Submit' />
-    </form>
-    {% if name %}
-    {{ name }}
-    {% endif %}
+      <label for='name'>Name:</label>
+      <input type='text' name='name' /><br><br>
+      
+      <label for='class'>Class: </label>
+      <input type='text' name='class' /><br><br>
+      
+      <label for='gender'>Gender:</label>
+      <input type="radio" id="male" name="gender" value="m">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="f">
+      <label for="female">Female</label><br><br>
+      
+      <label for='stream'>Are you an Arts or Science student?</label>
+      <input type='radio' id='arts' name='stream' value='arts'>
+      <label for='arts'>Arts</label>
+      <input type='radio' id='science' name='stream' value='sci'>
+      <label for='science'>Science</label><br><br>
+      
+      <label for='H2'>H2 Subjects:</label><br><br>
+      <p1>Science: </p1>
+      <input type='checkbox' id='2Physics' name='H2' value='phy'>
+      <label for='2Physics'>Physics</label>
+      <input type='checkbox' id='2Chemistry' name='H2' value='chem'>
+      <label for='2Chemistry'>Chemistry</label>
+      <input type='checkbox' id='2Biology' name='H2' value='bio'>
+      <label for='2Biology'>Biology</label>
+      <input type='checkbox' id='2Computing' name='H2' value='com'>
+      <label for='2Computing'>Computing</label>
+      <input type='checkbox' id='2Maths' name='H2' value='math'>
+      <label for='2Maths'>Maths</label>
+      <input type='checkbox' id='2FMaths' name='H2' value='fmaths'>
+      <label for='2Fmaths'>Further Maths</label><br><br>
+      <p1>Arts: </p1>
+      <input type='checkbox' id='2Literature' name='H2' value='lit'>
+      <label for='2Literature'>Literature</label>
+      <input type='checkbox' id='2History' name='H2' value='hist'>
+      <label for='2History'>History</label>
+      <input type='checkbox' id='2Geography' name='H2' value='geog'>
+      <label for='2Geography'>Geography</label>
+      <input type='checkbox' id='2Economics' name='H2' value='econs'>
+      <label for='2Economics'>Economics</label>
+      <input type='checkbox' id='2Art' name='H2' value='art'>
+      <label for='2Art'>Art</label>
+      <input type='checkbox' id='2MTLL' name='H2' value='mtll'>
+      <label for='2MTLL'>MTLL</label><br><br>
 
-    {% if nums %}
-      {% for num in nums %}
-      {{ num }}
-      {% endfor %}
-    {% endif %}
+      <label for='H1'>H1 Subjects:</label><br><br>
+      <p1>Science: </p1>
+      <input type='checkbox' id='1Physics' name='H1' value='phy'>
+      <label for='1Physics'>Physics</label>
+      <input type='checkbox' id='1Chemistry' name='H1' value='chem'>
+      <label for='1Chemistry'>Chemistry</label>
+      <input type='checkbox' id='1iology' name='H1' value='bio'>
+      <label for='1Biology'>Biology</label>
+      <input type='checkbox' id='1Maths' name='H1' value='math'>
+      <label for='1Maths'>Maths</label><br><br>
+      <p1>Arts: </p1>
+      <input type='checkbox' id='1Literature' name='H1' value='lit'>
+      <label for='1Literature'>Literature</label>
+      <input type='checkbox' id='1History' name='H1' value='hist'>
+      <label for='1History'>History</label>
+      <input type='checkbox' id='1Geography' name='H1' value='geog'>
+      <label for='1Geography'>Geography</label>
+      <input type='checkbox' id='1Economics' name='H1' value='econs'>
+      <label for='1Economics'>Economics</label><br><br><br>
+      <input type='submit' value='Submit' /><br>
+
   </body>
+
+  {% if egg == '24/13' %}
+  <h1>{{ "Hello. Fellow Classmate." }}</h1>
+  {% endif %}
+  
 </html>
