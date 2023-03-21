@@ -29,8 +29,8 @@ def index():
       spent = int(list[1])
       added = int(list[2])
       dataset.append((description, spent, added))
-    total_spent = sum([thing[1] for thing in dataset])
-    total_added = sum([thing[2] for thing in dataset])
+    total_spent = sum([thing[1] for thing in dataset]) - 10
+    total_added = sum([thing[2] for thing in dataset]) - 10
     total = total_added - total_spent
     if total < 0:
      with open('secret.txt', 'r') as file:
