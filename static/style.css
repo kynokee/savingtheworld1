@@ -28,3 +28,8 @@ table, th, td {
 td{
   padding: 20px;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

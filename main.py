@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
+  
   if request.method == 'POST':
     if request.form.get('reset') == 'yes':
       with open('expenses.txt', 'w') as file:
@@ -19,6 +20,7 @@ def index():
       added = '0'
     with open('expenses.txt', 'a') as file:
       file.write('\n' + description + ',' + spent + ',' + added)
+      
   dataset = []
   with open('expenses.txt', 'r') as file:
     line = file.read()
@@ -37,6 +39,7 @@ def index():
        secret = file.read()
     else:
       secret = None
+      
   return render_template('index.html', data=dataset, total=total, total_spent=total_spent, total_added=total_added, secret=secret)
   
 app.run(host='0.0.0.0', port=81)
