@@ -3,21 +3,25 @@
   <head>
     <title>Financial Overview</title>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
+    <meta charset='utf-8' />
   </head>
   <body>
   <center>
       
     <div class="header">  
     <h1>MyFinance</h1>
-    <h1>{{ secret }}</h1>
+    {% if secret %}
+    <h1>&#x1F911; {{ secret }} &#x1F911;</h1>
+    {% endif %}
     </div>
-      
+    
+    
     <form method = 'POST'>
       <br><label for="description">Description:</label><br>
       <input type="text" id="description" name="description"><br><br>
       <label for="spent">Amount Spent:</label><br>
       <input type="number" id="spent" name="spent"><br><br>
-      <label for="added">Amount Added:</label><br>
+      <label for="added">Amount Gained:</label><br>
       <input type="number" id="added" name="added"><br>
       <input type="radio" id="yes" name="reset" value="yes">
       <label for="yes">Reset?</label>

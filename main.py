@@ -7,7 +7,7 @@ def index():
   if request.method == 'POST':
     if request.form.get('reset') == 'yes':
       with open('expenses.txt', 'w') as file:
-        file.write('Example,10,10')
+        file.write('Eg. 10 Apples,10,0')
     description = request.form.get('description')
     if not description:
       description = 'No description'
@@ -30,13 +30,13 @@ def index():
       added = int(list[2])
       dataset.append((description, spent, added))
     total_spent = sum([thing[1] for thing in dataset]) - 10
-    total_added = sum([thing[2] for thing in dataset]) - 10
+    total_added = sum([thing[2] for thing in dataset])
     total = total_added - total_spent
     if total < 0:
      with open('secret.txt', 'r') as file:
        secret = file.read()
     else:
-      secret = ''
+      secret = None
   return render_template('index.html', data=dataset, total=total, total_spent=total_spent, total_added=total_added, secret=secret)
   
 app.run(host='0.0.0.0', port=81)
